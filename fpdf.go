@@ -3523,6 +3523,9 @@ func (f *Fpdf) beginpage(orientationStr string, size SizeType) {
 	f.x = f.lMargin
 	f.y = f.tMargin
 	f.fontFamily = ""
+	fmt.Println("Inside begin page")
+	fmt.Println("f.defOrientation")
+	fmt.Println(f.defOrientation)
 	// Check page size and orientation
 	if orientationStr == "" {
 		orientationStr = f.defOrientation
@@ -3535,6 +3538,8 @@ func (f *Fpdf) beginpage(orientationStr string, size SizeType) {
 			f.w = size.Wd
 			f.h = size.Ht
 		} else {
+			fmt.Println("***changed")
+			fmt.Println("*****************")
 			f.w = size.Ht
 			f.h = size.Wd
 		}
